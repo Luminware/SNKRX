@@ -1,0 +1,165 @@
+Weekly maintenance updates:
+
+#3
+
+  * Fixed a bug that would cause incorrect party size after loading a looped run (thanks ArnaudOechslin https://github.com/a327ex/SNKRX/pull/15)
+  * Fixed a rare crash due to enemy critters being spawned during a level transition
+  * Improved descriptions for engineer and sentry to avoid confusion
+  * Fixed engineer's and artificer's cooldown not being displayed properly
+  * Changed freezing field's color to blue for better visual clarity
+  * Increased cryomancer's area of effect by 50%
+  * Increased bane's void rift's size by 50%
+  * Beastmaster now has 10% crit chance by default
+  * The fairy will no longer buff non-attacking units
+  * Awakening and enchanted items will no longer buff non-attacking units
+  * Changed magician's Lv.3 effect to "+50% attack speed every 12 seconds for 6 seconds"
+  Added the following keyboard shortcuts:
+    While in the shop:
+      * R rerolls units
+      * 1, 2, 3 buys units
+      * Enter/space starts the round
+    While in the item selection screen:
+      * R rerolls items
+      * 1, 2, 3, 4 buys items
+
+#2
+
+  * Fixed a bug where NG+5 difficulty would go down to NG+4 after looping
+  * Capped enemy movement speed after level 150
+  * Warden's bubble is now affected by magnify
+  * Changed all text instances of "active set" to "active class" to avoid confusion
+  * Added a run timer option - note that the timer will be off for saved runs that started before the patch
+  -- * Alt tabbing now automatically pauses the game while in the arena
+  * Shop level can now be reduced
+
+#1
+  
+  * Fixed several blue screen crashes due to broken looping state
+  * Fixed several blue screen crashes due to broken physics state
+  * Fixed a bug where double clicking the loop button would lead to broken looping state and crashes
+  * Fixed sold items not being restored to the passive pool
+  * Fixed gambler's volume being too loud with high amounts of gold
+  * Fixed soundtrack button not working on the win screen
+  * Fixed volume text bug when decreasing it from 1 to 0
+  * Fixed volume buttons not looping
+  * Fixed a bug where the first run would not have certain items in the item pool
+  * Fixed psyker orbs item saying "+1/2/3" in the shop when it is "+1/2/4"
+  * Fixed kinetic strike not being in the passive pool
+  * Fixed a bug where sometimes restarting the game from a looped run would let you have more units than normal on the next run
+  * Limited critters to 100 due to performance issues
+  * Limited health orbs on the arena to 30 due to performance issues
+  * Limited gold coins on the arena to 30 due to performance issues
+
+---
+
+30Hz
+
+Invoker - casts attacks and spells from other units
+  having a unit like this from the start will help ensure that attacks are behind function calls that can be accessed by another unit easily rather than mostly hidden like they are now
+
+Future ideas:
+Chaos related classes
+Cartographer - https://i.imgur.com/Bz6glry.png
+Trappers:
+Emitters: +projectile damage, projectile mods
+  warping
+  homing/barrage
+  wavy, 90, 45 degree
+  splitting tears
+  Traps - map modifier
+    turrets attached to walls shoot single, slow moving projectiles in a predictable pattern that deal lots of damage
+  Triangler - drops a trap and the 3rd trap will trigger the area, dealing X AoE damage 2-3 times
+Brawlers: units focused on crashing on enemies
+  https://i.imgur.com/5YubukS.png - unit idea
+Bodyguard - https://i.imgur.com/Y2pP20v.png
+Conjurer unit that creates an unit that actively protects you from enemy projectiles
+Guardians - https://i.imgur.com/Ynu5Cdw.png
+Cultists - https://i.imgur.com/GsfoZBd.png
+psyker + builder - https://i.imgur.com/VjY6r1d.png
+Assists (2/4) - 
+  Ringmaster (tier 4 assist, nuker) - +15% to all stats to adjacent units, Lv.3 effect - create a cross that deals AoE damage 5 times for 10 seconds
+  Absorber (tier 2 assist, warrior) - absorbs 50% damage from adjacent units, Lv.3 effect - absorbs 75% damage from adjacent units and gives the absorber +25% defense
+  Pardoner (tier 3 assist, mercenary) - 
+  Oracle (tier 1 assist) - +10% dodge chance to adjacent units, Lv.3 effect - +20% dodge chance to adjacent units
+  Seraph (tier 2 assist, healer) - periodically chooses 1 random unit and gives it +100% defense for 6 seconds, Lv.3 - choose 2 units instead
+Add a few builder units that create walls/solids the player can hide behind (https://www.youtube.com/watch?v=KqwBZ_2f7QU&t=2331s)
+Hexblaster? - curser that consumes curses to deal damage
+Bench? - https://i.imgur.com/B1gNVKk.png
+Balance option for when there are more sets - https://i.imgur.com/JMynwbL.png
+Negative effect: colliding with yourself kills one of your units
+https://i.imgur.com/bxfvA7g.png
+https://steamcommunity.com/app/915310/discussions/0/4658391921156086711/ - general feedback
+https://steamcommunity.com/app/915310/discussions/0/4658391921156325745/ - math on gold, rerolls and units
+https://steamcommunity.com/app/915310/discussions/0/3069747783686815659/ - general feedback
+https://steamcommunity.com/app/915310/discussions/0/3069747783688708231/ - general feedback
+https://steamcommunity.com/app/915310/discussions/0/3046104862443040220/ - general feedback
+Challenge mode
+  Units die permanently when they die
+  Slower scaling with less individually threatening units
+  Max snake size goes up every 10 levels
+Draft mode
+Enemy ideas - https://steamcommunity.com/app/915310/discussions/0/3069747783691890511/
+Unit ideas - https://i.imgur.com/VNMS2YV.png
+Unit ideas - https://steamcommunity.com/app/915310/discussions/0/3069747783693969554/
+Unit ideas - https://steamcommunity.com/app/915310/discussions/0/3046104336668792953/
+Achievement ideas - https://i.imgur.com/Q7jHWB2.png, https://i.imgur.com/2l5eist.png
+general ideas - https://i.imgur.com/W8EYUU1.png
+room types - https://i.imgur.com/u2AY1ea.png
+
+Draft system
+Ban system
+Class select
+Random select
+
+
+--
+
+
+Roguelite update:
+  Technical improvements:
+    Spawn tech: spawn every entity in a grid, before spawning check to see if grid position is clear, this will prevent any issues due to entities spawning inside one another
+    Battle stats: DPS, damage taken, etc (check Underlords)
+    Tag system: similar to PoE
+    Keyword explanations: similar to StS or Artifact, simply create additional text windows for keywords and what they mean
+    Key rebinding (for non-QWERTY keyboards)
+  StS-like map with nodes, node types:
+    Arena
+    Elite
+    Boss
+    Map (map of bigger size than arena with fixed spawns)
+    Unit shop
+    Item shop
+      Once there are enough items there can be item tiers
+      The item shop should work similarly to the normal shop, where it can be upgraded and then have a higher chance for higher tier items
+    Text + reward
+    Training grounds (upgrade unit)
+    Tavern (heal units)
+    Challenge + reward
+      Go through the labyrinth without hitting any walls
+      Go through the traps without getting hit
+    Room ideas - https://i.imgur.com/ajqtTOc.png
+  Units die permanently when they die (dead units can be stored in bench to be revived later)
+  Units can have items attached to them like in Underlords
+  Unit item ideas:
+    This unit's projectiles pierce/chain/fork/seek/split/stun/etc
+    This unit is a [class]
+  New stat system:
+    Most stats are values from 1 to 10 (can be lower than 1 or higher than 10 due to debuffs/buffs) that represent consistent internal values between all units
+    i.e. 3 attack speed means the same internal attack rate value (like say 6 seconds) for the entire game
+    In general it's better if units don't have hidden internal multipliers on these stats, although sometimes that may be inevitable
+    Damage:
+      Hit:
+        Everything hits except DoT
+      Damage type:
+        Attack - physical attacks, decreased by the enemy's armor
+        Spell - magical attacks, decreased by the enemy's magic resistance
+      Attack type:
+        Crash - damage dealt when bumping into enemies
+        Projectile - damage dealt by projectiles
+        AoE - damage dealt in an area
+        DoT - damage dealt over time
+    Attack speed:
+    Defense:
+      Armor - decreases damage taken from attacks
+      Magic Resistance - decreases damage taken from spells
+    Movement speed:
